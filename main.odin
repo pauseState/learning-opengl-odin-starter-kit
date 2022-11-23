@@ -26,9 +26,13 @@ main :: proc () {
         return
     }
 
-    glfw.InitHint(glfw.CONTEXT_VERSION_MAJOR, GL_MAJOR_VERSION)
-    glfw.InitHint(glfw.CONTEXT_VERSION_MINOR, GL_MINOR_VERSION)
-    glfw.InitHint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
+    glfw.WindowHint(glfw.CONTEXT_VERSION_MAJOR, GL_MAJOR_VERSION)
+    glfw.WindowHint(glfw.CONTEXT_VERSION_MINOR, GL_MINOR_VERSION)
+    glfw.WindowHint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
+    
+    when ODIN_OS == .Darwin {
+        glfw.WindowHint(glfw.OPENGL_FORWARD_COMPAT, 1)
+    }
 
     window_handle := glfw.CreateWindow(WIDTH, HEIGHT, TITLE, nil, nil)
 
