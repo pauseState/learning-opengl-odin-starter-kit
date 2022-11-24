@@ -5,8 +5,8 @@ import "core:fmt"
 import "vendor:glfw"
 import gl "vendor:OpenGL"
 
-WIDTH  :: 1600
-HEIGHT :: 900
+WIDTH  :: 1024
+HEIGHT :: 768
 TITLE  :: "Learning OpenGL"
 
 GL_MAJOR_VERSION :: 3
